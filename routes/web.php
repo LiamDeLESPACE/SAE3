@@ -15,3 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [VilleController::class, "getVilles"]);
+
+Route::get('/recherche_annonce', [AnnonceController::class, "showAnnonce"]);

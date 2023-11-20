@@ -8,12 +8,13 @@
 </head>
 <body>
     <form>
-    <input list="html_elements" name="web_language">
-        <datalist id="html_elements">
-            @foreach ($villes as $ville)
-                <option value="{{ $ville->nomville }}"></option>
-            @endforeach
-        </datalist>
+        <input list="html_elements" name="web_language">
+            <datalist id="html_elements">
+                @foreach ($villes as $ville)
+                    <option value="{{ $ville->nomville  .' ('. $ville->codepostalville .')'}}"></option>
+                @endforeach
+            </datalist>
+        <input type="submit" name="rechercher" value="Rechercher">    
     </form>
 </body>
 </html>

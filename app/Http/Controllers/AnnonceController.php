@@ -9,6 +9,7 @@ class AnnonceController extends Controller
 {
     public function showAnnonce(Request $request, $id){
         $annonce = Annonce::findOrFail($id);
+        
         return view("recherche_annonce",["annonce"=>$annonce]);
     }
 }
