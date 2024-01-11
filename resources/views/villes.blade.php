@@ -7,14 +7,15 @@
     <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-    <form>
-        <input list="html_elements" name="web_language">
+    <form action="/recherche_annonce" method="GET" role="search">
+    {{ csrf_field() }}
+        <input list="html_elements" name="villeChoisie">
             <datalist id="html_elements">
                 @foreach ($villes as $ville)
                     <option value="{{ $ville->nomville  .' ('. $ville->codepostalville .')'}}"></option>
                 @endforeach
             </datalist>
-        <input type="submit" name="rechercher" value="Rechercher">    
+        <button type="submit">Rechercher</button>    
     </form>
 </body>
 </html>
